@@ -1,0 +1,48 @@
+<section>
+    <div class="container">
+      <div class="wrap m-auto">
+        <app-messages></app-messages>
+        <h3>My Shipping address Sittings</h3>
+        <hr>
+        <div *ngIf="!user.address" class="text-center">
+            <i class="fa fa-spinner fa-spin"></i>
+        </div>
+        <div *ngIf="user.address && !user.address.length" class="text-center">
+            <p class="lead">You didn't fill your shipping address yet</p>
+        </div>
+        <div *ngIf="user.address" class="text-center">
+        <div class="card bg-light">
+            <div class="card-body">
+              <form (ngSubmit)="edit()">
+                <div class="form-group">
+                  <label for="addr1">addr1</label>
+                  <input type="text" class="form-control" name="addr1" [(ngModel)]="user.address.addr1" id="addr1" placeholder="addr1">
+                </div>
+                <div class="form-group">
+                    <label for="addr2">addr2</label>
+                    <input type="text" class="form-control" name="addr2" [(ngModel)]="user.address.addr2" id="addr2" placeholder="addr1">
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" name="city" [(ngModel)]="user.address.city" id="inputCity">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <input type="text" class="form-control" name="state" [(ngModel)]="user.address.state" id="inputState">
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputZip">Postal Code</label>
+                        <input type="text" class="form-control" name="postalCode" [(ngModel)]="user.address.postalCode" id="inputZip">
+                      </div>
+                    </div>
+                  <hr>
+                <button type="submit" class="btn btn-primary" ng-submit="login()" >Applay Sttings</button>
+              </form>
+               </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  

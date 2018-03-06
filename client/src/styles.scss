@@ -1,0 +1,18 @@
+$main:#232f3e;
+
+.bg-main{
+    background-color: $main
+}
+
+a,button{
+    cursor: pointer;
+}
+
+a:hover{
+    color: #ffc107
+}
+
+section{
+    margin-top: 25px;
+    min-height:550px
+}

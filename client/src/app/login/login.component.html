@@ -1,0 +1,27 @@
+<section>
+  <div class="container">
+    <div class="col-lg-4 offset-lg-4">
+      <app-messages></app-messages>
+      <div class="card bg-light">
+          <div class="card-body">
+            <h1 class="page-header ">Login</h1>
+             <hr>
+            <form (ngSubmit)="login()">
+              <div class="form-group">
+                <label for="Email">Email address</label>
+                <input type="email" class="form-control" id="Email" name="email" [(ngModel)]="user.email" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+                <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="user.password" id="Password" placeholder="Password">
+              </div>
+             
+              <hr>
+              <button type="submit" class="btn btn-primary btn-block" ng-submit="login()" >Login</button>
+            </form>
+        </div>
+  </div>
+  </div>
+  </div>
+</section>
