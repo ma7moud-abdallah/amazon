@@ -11,6 +11,8 @@ const config = require('./config')
 // routes files
 const userRoute = require('./routes/accounts')
 const profileRoute = require('./routes/profile')
+const categoryRoute = require('./routes/categories')
+const productsRoute = require('./routes/products')
 
 
 // connecting to database
@@ -39,5 +41,8 @@ app.use(cors())
 //basic route
 app.use('/accounts',userRoute)
 app.use('/profile',profileRoute)
+app.use('/addCategory',categoryRoute)
+app.use('/products',productsRoute)
+
 
 app.listen(config.port)

@@ -16,18 +16,19 @@ router.get('/',check,(req,res,next) => {
 
 
 
-router.post('/',check,(req,res,next) => {
+router.put('/',check,(req,res,next) => {
     User.findOne({_id:req.decoded.user._id},(err,user) =>{
         if(err) return res.json({error:err})
 
         if(req.body.email) user.email = req.body.email
         if(req.body.name) user.name = req.body.name
         if(req.body.password) user.password = req.body.password
-        
-        user.isSeller = req.body.isSeller
+         user.isSeller = req.body.isSeller
+         
         user.save()
         res.json({
-            message:"profile modified"
+            message:"profile modified",
+            user:user
         })
   })
 

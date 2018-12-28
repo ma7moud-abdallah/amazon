@@ -7,7 +7,7 @@
         <div *ngIf="!user.address" class="text-center">
             <i class="fa fa-spinner fa-spin"></i>
         </div>
-        <div *ngIf="user.address && !user.address.length" class="text-center">
+        <div *ngIf="user.address && !user.address" class="text-center">
             <p class="lead">You didn't fill your shipping address yet</p>
         </div>
         <div *ngIf="user.address" class="text-center">
