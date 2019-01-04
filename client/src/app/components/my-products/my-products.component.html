@@ -1,0 +1,40 @@
+<section id="products">
+  <div class="container p-5">
+    <div *ngIf="!products" class="text-center">
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
+    <div *ngIf="products && !products.length" class="text-center">
+        <p class="lead">No Products</p>
+    </div>
+    <div *ngIf="products && products.length">
+        <h4 class="display-4">My Products</h4>
+        <div class="row">
+          <div class="offset-10 col-2 d-none d-md-block">
+            <p>
+              <small class="text-muted">price</small>
+            </p>
+          </div>
+        </div>
+        <hr class="mt-0">
+         <div *ngFor="let product of products" class="product">
+           <div class="row">
+           <div class="col-4 col-md-2">
+             <a routerLink="/products/{{product._id}}">
+              <img [src]="product.image" alt="image" class="img-fluid img-thumbnail">
+            </a>
+           </div>
+           <div class="col-5 col-md-8">
+              <a routerLink="/products/{{product._id}}">
+                <p class="m-0">
+                  <small class="text-muted">{{product.name}}</small>
+                </p>
+              </a>
+           </div>
+           <div class="col-2">
+              <a routerLink="/products/{{product._id}}" class="text-danger font-weight-bold">{{product.price |currency}}</a>
+           </div>
+          </div>
+         </div>
+    </div>
+  </div>
+</section>

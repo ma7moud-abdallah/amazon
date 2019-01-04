@@ -1,0 +1,41 @@
+<section id="post-product">
+  <div class="container p-5">
+    <h4 class="display-4">post Product</h4>
+    <hr>
+    <app-messages></app-messages>
+    <div *ngIf="!categories" class="text-center">
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
+    <div *ngIf="categories" >
+        <div class="card bg-light mt-5">
+         <div class="card-body">
+          <form [formGroup]="pForm">
+            <div class="form-group">
+              <label>title</label>
+              <input name="name"  type="text" [(ngModel)]="product.name"  class="form-control" formControlName="name">
+            </div>
+            <div class="form-group">
+              <label>price</label>
+              <input name="price"  type="number" [(ngModel)]="product.price"  class="form-control" formControlName="price">
+            </div>
+            <div class="form-group">
+              <label>category</label>
+              <select class="form-control" name="cat"  [(ngModel)]="product.category" formControlName="cat">
+               <option *ngFor="let cat of categories" [value]="cat._id">{{cat.name}}</option>
+             </select>
+            </div>
+            <div class="form-group">
+              <label>imageUrl</label>
+              <input name="image"  type="text" [(ngModel)]="product.image" class="form-control" formControlName="image">
+            </div>
+            <div class="form-group">
+              <label>description</label>
+              <textarea name="desc"  type="text" rows="5" [(ngModel)]="product.description" class="form-control" formControlName="desc"></textarea>
+            </div>
+            <button class="btn btn-info btn-block" (click)="postProduct()"> Add Product</button>
+          </form>
+         </div>
+        </div>
+    </div>
+  </div>
+</section>

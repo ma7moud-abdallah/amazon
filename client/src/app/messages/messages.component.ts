@@ -7,10 +7,11 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent implements OnInit {
-
+  staticAlertClosed:boolean = false
   constructor(private data:DataService) { }
 
   ngOnInit() {
+    setTimeout(() => this.staticAlertClosed = true, 10000);
   }
 
 }

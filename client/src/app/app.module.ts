@@ -17,6 +17,11 @@ import { DataService } from './services/data.service';
 import { AuthgaurdService } from './services/authgaurd.service';
 import { ProfSittingsComponent } from './prof-sittings/prof-sittings.component';
 import { ShippingAddressComponent } from './shipping-address/shipping-address.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { PosProductComponent } from './components/pos-product/pos-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MyProductsComponent } from './components/my-products/my-products.component';
+
 
 
 @NgModule({
@@ -28,13 +33,17 @@ import { ShippingAddressComponent } from './shipping-address/shipping-address.co
     ProfileComponent,
     MessagesComponent,
     ProfSittingsComponent,
-    ShippingAddressComponent
+    ShippingAddressComponent,
+    CategoriesComponent,
+    PosProductComponent,
+    MyProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     NgbModule.forRoot()
   ],
   providers: [AuthService,DataService,AuthgaurdService],

@@ -1,0 +1,27 @@
+<section id="cats">
+    
+  <div class="container p-5">
+      <app-messages></app-messages>
+    <h4 class="display-4">Categories</h4>
+    <hr>
+    <div *ngIf="!categories" class="text-center">
+      <i class="fa fa-spinner fa-spin"></i>
+    </div>
+    <div *ngIf="categories" class="list-group">
+      <a  *ngFor="let category of categories" routerLink="/categories/{{category._id}}" class="list-group-item list-group-item-action">{{category.name}}</a>
+    </div>
+    <hr style="margin-top:10rem">
+    <div class="mt-5 card bg-light">
+     <div class="card-body">
+       <h4 class="card-title">Add Category</h4>
+       <div class="form">
+         <div class="form-group">
+           <label >Category</label>
+           <input type="text" class="form-control" [(ngModel)]="catName">
+         </div>
+         <button class="btn btn-info" (click)="sendCats()">Add Category</button>
+       </div>
+     </div>
+    </div>
+  </div>
+</section>

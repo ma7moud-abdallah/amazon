@@ -21,6 +21,21 @@
           <p class="lead">
               <a class="btn btn-warning" routerLink="/profile/address">Shipping Address Change</a>
             </p>
+            <div *ngIf=user.user.isSeller class="isSeller">
+              <h4 class="display-4">
+                seller Section
+              </h4>
+              <hr class="m-2">
+             <div class="row">
+               <p class="col lead">
+                  <a class="btn" routerLink="/postProduct">Post Product</a>                
+                </p>
+               <p class="col lead">
+                 <a class="btn" routerLink="/myProduct">My Products</a>
+                </p>
+             </div>
+
+            </div>
         </div>
       </div>
     </div>

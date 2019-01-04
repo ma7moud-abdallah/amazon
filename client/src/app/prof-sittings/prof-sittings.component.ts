@@ -40,13 +40,9 @@ export class ProfSittingsComponent implements OnInit {
     if(this.validate()){
       let token = localStorage.getItem('token')
       if(!token) return console.log('there is no token')
-       this.auth.editProfile({
-         name:'ahmed',
-         password:159,
-         email:"ahmed@yahoo.com",
-         isSeller:false
-       })
-       .subscribe(res =>console.log(res))
+       this.auth.editProfile(this.user.user)
+       .subscribe((res) =>console.log(res))
+       
      }
   }
 
